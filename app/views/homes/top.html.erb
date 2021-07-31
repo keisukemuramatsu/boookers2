@@ -1,6 +1,22 @@
-<h1>welcome to Bookers!!</h1>
+<main>
+  <p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6" >
+       <h1>welcome to
+       <span class="glyphicon glyphicon-map-marker"></span>
+       Bookers!!</h1>
+      </div>
+    </div>
+  </div>
+</main>
 <h4>In Bookers,</h4>
 <p>you can share and exchange your opinions, inpressions, and emotions.</p>
 <p>about various books!</p>
-<p>Log in</p>
-<p>Sign Up</p>
+<% if user_signed_in? %>
+  <p><%= link_to 'Log in', books_path %></p>
+  <p><%= link_to 'Sign_up', books_path %></p>
+<% else %>
+  <p><%= link_to 'Log in', new_user_session_path %></p>
+  <p><%= link_to 'Sign_up', new_user_registration_path %></p>
+<% end %>
